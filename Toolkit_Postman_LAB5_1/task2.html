@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="req">Запрос к vk.com</button>
+    <pre id="result"></pre>
+    <script>
+        document.getElementById('req').onclick = () => {
+            axios.get('https://vk.com')
+                .then(res => {
+                    document.getElementById('result').innerText = 'Успех! Статус: ' + res.status;
+                })
+                .catch(err => {
+                    document.getElementById('result').innerText = 'Ошибка: ' + err.message;
+                });
+        };
+    </script>
+
+</body>
+</html>

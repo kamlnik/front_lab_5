@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
+</head>
+<body>
+    
+    <script>
+
+        const app = new PIXI.Application({
+            width: 1200,
+            height: 800,
+            backgroundColor: 0x1099bb
+        });
+        document.body.appendChild(app.view);
+
+        // Сам прямоугольник
+        const rect = new PIXI.Graphics();
+        rect.beginFill();
+        rect.drawRect(0, 0, 100, 100);
+        rect.endFill();
+        rect.x = 600;
+        rect.y = 250;
+        app.stage.addChild(rect);
+
+        // вращение
+        app.ticker.add(() => { rect.rotation += 0.01; });
+
+    </script>
+</body>
+</html>
